@@ -138,8 +138,13 @@ def user_input_features():
 input_df = user_input_features()
 
 
+def load_model():
+    return joblib.load("diabetes_model.pkl")
+
+
+model = load_model()
+
 if st.button("Submit"):
-    model = joblib.load("diabetes_model.pkl")
     prediction = model.predict(input_df)
 
     st.write("Result:",
