@@ -73,6 +73,22 @@ label {
 st.divider()
 st.sidebar.header("Input Parameters")
 
+#sidebar colors
+
+import streamlit as st
+
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 def user_input_features():
     gender = st.sidebar.selectbox("Gender", ("Male", "Female"))
@@ -114,11 +130,11 @@ if st.button("Predict"):
         st.success(
             "You are not at risk of diabetes. Keep maintaining a healthy lifestyle!")
 
-motivations = [
-    "Every healthy choice counts.",
-    "Your future self will thank you.",
-    "Health today, strength tomorrow.",
-    "One good decision can change everything.",
-    "Stay consistent, stay healthy."
-]
-st.success(random.choice(motivations))
+# motivations = [
+#     "Every healthy choice counts.",
+#     "Your future self will thank you.",
+#     "Health today, strength tomorrow.",
+#     "One good decision can change everything.",
+#     "Stay consistent, stay healthy."
+# ]
+# st.success(random.choice(motivations))
