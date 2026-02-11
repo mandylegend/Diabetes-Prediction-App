@@ -6,6 +6,16 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import random
+import streamlit as st
+
+st.markdown("""
+<style>
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: purple !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 df = pd.read_csv("diabetes_prediction_dataset.csv")
 
@@ -77,16 +87,14 @@ st.sidebar.header("Input Parameters")
 
 import streamlit as st
 
-st.markdown(
-    """
-    <style>
-    [data-testid="stSidebar"] {
-        background-color: white;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<style>
+[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 
 
