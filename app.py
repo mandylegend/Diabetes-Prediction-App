@@ -137,62 +137,11 @@ def user_input_features():
 
 input_df = user_input_features()
 
-language = st.selectbox("Select Language", ("English", "Hindi"))
-
-# TEXT = {
-#     "English": {
-#         "result_high": "Result: Diabetic / High Risk",
-#         "result_low": "Result: Not Diabetic / Low Risk",
-#         "warning": "You may be at risk of diabetes. Please consult a healthcare professional.",
-#         "success": "You are not at risk of diabetes. Keep maintaining a healthy lifestyle!",
-#         "tips_high_title": "Health Tips to Reduce Risk",
-#         "tips_low_title": "Tips to Stay Healthy",
-#         "tips_high": [
-#             "Follow a balanced diet (reduce sugar & refined carbs)",
-#             "Exercise at least 30 minutes daily",
-#             "Maintain healthy body weight",
-#             "Avoid smoking and alcohol",
-#             "Monitor blood sugar regularly"
-#         ],
-#         "tips_low": [
-#             "Eat fruits and vegetables",
-#             "Stay physically active",
-#             "Get regular health checkups",
-#             "Drink enough water",
-#             "Manage stress and sleep well"
-#         ]
-#     },
-
-#     "Hindi": {
-#         "result_high": "परिणाम: मधुमेह का उच्च जोखिम",
-#         "result_low": "परिणाम: मधुमेह का कम जोखिम",
-#         "warning": "आपको मधुमेह का खतरा हो सकता है। कृपया डॉक्टर से सलाह लें।",
-#         "success": "आपको मधुमेह का खतरा नहीं है। स्वस्थ जीवनशैली बनाए रखें।",
-#         "tips_high_title": "जोखिम कम करने के सुझाव",
-#         "tips_low_title": "स्वस्थ रहने के सुझाव",
-#         "tips_high": [
-#             "संतुलित आहार लें (चीनी कम करें)",
-#             "प्रतिदिन 30 मिनट व्यायाम करें",
-#             "स्वस्थ वजन बनाए रखें",
-#             "धूम्रपान और शराब से बचें",
-#             "ब्लड शुगर की नियमित जांच करें"
-#         ],
-#         "tips_low": [
-#             "फल और सब्जियां खाएं",
-#             "नियमित रूप से व्यायाम करें",
-#             "स्वास्थ्य जांच कराते रहें",
-#             "पर्याप्त पानी पिएं",
-#             "तनाव कम करें और अच्छी नींद लें"
-#         ]
-#     }
-# }
-
 
 if st.button("Submit"):
     model = joblib.load("diabetes_model.pkl")
     prediction = model.predict(input_df)
-    
-    
+
     st.write("Result:",
              "Diabetic" if prediction[0] == 1 else "Not Diabetic")
 
