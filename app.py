@@ -8,11 +8,50 @@ import numpy as np
 import random
 import streamlit as st
 
+import streamlit as st
+
 st.markdown("""
 <style>
 /* Sidebar background */
 [data-testid="stSidebar"] {
-    background-color: purple !important;
+    background: linear-gradient(180deg, #020617, #020617);
+}
+
+/* Force all sidebar text visible */
+[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Section titles (like "Input Parameters") */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #38bdf8 !important;
+    opacity: 1 !important;
+}
+
+/* Labels (Gender, Age, BMI, etc.) */
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span {
+    color: #e5e7eb !important;
+    opacity: 1 !important;
+}
+
+/* Sliders text (numbers) */
+[data-testid="stSidebar"] .stSlider span {
+    color: #f87171 !important;
+    opacity: 1 !important;
+}
+
+/* Selectbox text */
+[data-testid="stSidebar"] div[data-baseweb="select"] span {
+    color: #000000 !important;
+}
+
+/* Fix icons & arrows */
+[data-testid="stSidebar"] svg {
+    fill: white !important;
 }
 </style>
 """, unsafe_allow_html=True)
