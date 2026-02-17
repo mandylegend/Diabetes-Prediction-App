@@ -6,7 +6,7 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import random
-
+import os
 
 df = pd.read_csv("diabetes_prediction_dataset.csv")
 
@@ -94,6 +94,8 @@ def user_input_features():
     smoking_history = st.selectbox(
         "Smoking History", ("Never", "Formerly", "Currently"))
     bmi = st.slider("BMI", 0.0, 50.0, 25.0)
+    if bmi == 0.0:
+        pass
     HbA1c_level = st.slider("HbA1c Level", 0.0, 15.0, 5.0)
     blood_glucose_level = st.slider(
         "Blood Glucose Level", 0.0, 300.0, 100.0)
@@ -124,6 +126,12 @@ if st.button("Submit"):
     prediction = model.predict(input_df)
     perctengae = model.predict_proba(input_df)[0][1] * 100
     st.write(f"Diabetes Risk: {perctengae:.2f}%")
+
+    input_df["diabetes"] = model.predict(input_df)
+    if os.path.exists("user_data.csv"):
+        input_df.to_csv("user_data.csv", mode="a", header=False, index=False)
+    else:
+        input_df.to_csv("user_data.csv", index=False)   
 
     st.write("Result:",
              "Diabetic" if prediction[0] == 1 else "Not Diabetic")
@@ -163,7 +171,9 @@ if st.button("Submit"):
             - Regularly monitor blood sugar levels and consult your doctor for personalized advice.
             -  Manage stress through mindfulness, meditation, or hobbies you enjoy.
                     """)
+    
 
+    
 
 # motivations = [
 #     "Every healthy choice counts.",
