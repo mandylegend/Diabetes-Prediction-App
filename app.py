@@ -85,30 +85,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# def user_input_features():
-#     gender = st.sidebar.selectbox("Gender", ("Male", "Female"))
-#     age = st.sidebar.slider("Age", 0, 100, 30)
-#     hypertension = st.sidebar.selectbox("Hypertension", ("Yes", "No"))
-#     heart_disease = st.sidebar.selectbox("Heart Disease", ("Yes", "No"))
-#     smoking_history = st.sidebar.selectbox(
-#         "Smoking History", ("Never", "Formerly", "Currently"))
-#     bmi = st.sidebar.slider("BMI", 0.0, 50.0, 25.0)
-#     HbA1c_level = st.sidebar.slider("HbA1c Level", 0.0, 15.0, 5.0)
-#     blood_glucose_level = st.sidebar.slider(
-#         "Blood Glucose Level", 0.0, 300.0, 100.0)
-#     data = {
-#         "gender": 1 if gender == "Male" else 0,
-#         "age": age,
-#         "hypertension": 1 if hypertension == "Yes" else 0,
-#         "heart_disease": 1 if heart_disease == "Yes" else 0,
-#         "smoking_history": 0 if smoking_history == "Never" else (1 if smoking_history == "Formerly" else 2),
-#         "bmi": bmi,
-#         "HbA1c_level": HbA1c_level,
-#         "blood_glucose_level": blood_glucose_level
-#     }
-
-#     return pd.DataFrame(data, index=[0])
-
 
 def user_input_features():
     gender = st.selectbox("Gender", ("Male", "Female"))
