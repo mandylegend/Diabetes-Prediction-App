@@ -122,6 +122,8 @@ model = load_model()
 
 if st.button("Submit"):
     prediction = model.predict(input_df)
+    perctengae = model.predict_proba(input_df)[0][1] * 100
+    st.write(f"Diabetes Risk: {perctengae:.2f}%")
 
     st.write("Result:",
              "Diabetic" if prediction[0] == 1 else "Not Diabetic")
