@@ -25,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-joblib.dump(model, "diabetes_model.pkl")
+joblib.dump(model, "diabetes_model_1.pkl")
 st.markdown(
     "<h1 style='text-align: center;'>🩺 Diabetes Prediction System</h1>",
     unsafe_allow_html=True
@@ -117,7 +117,7 @@ input_df = user_input_features()
 
 
 def load_model():
-    return joblib.load("diabetes_model.pkl")
+    return joblib.load("diabetes_model_1.pkl")
 
 
 model = load_model()
