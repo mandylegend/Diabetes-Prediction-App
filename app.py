@@ -13,10 +13,11 @@ df = pd.read_csv("diabetes_prediction_dataset.csv")
 X = df.drop("diabetes", axis=1)
 y = df["diabetes"]
 
-le = LabelEncoder()
+
 for column in X.columns:
     if X[column].dtype == "object":
-        X[column] = le.fit_transform(X[column])
+        encoder = LabelEncoder()
+        X[column] = encoder.fit_transform(X[column].astype(str))
 
 
 X_train, X_test, y_train, y_test = train_test_split(
