@@ -135,7 +135,8 @@ if st.button("Submit"):
 
     st.write("Result:",
              "Diabetic" if prediction[0] == 1 else "Not Diabetic")
-
+    
+    st.write(input_df)
     if prediction[0] == 1:
         st.warning(
             "You are at risk of diabetes. Please consult a healthcare professional.")
