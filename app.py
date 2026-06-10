@@ -8,7 +8,7 @@ import numpy as np
 import random
 import os
 
-df = pd.read_csv("diabetes.csv")
+df = pd.read_csv("diabetes_prediction_dataset.csv")
 
 X = df.drop("diabetes", axis=1)
 y = df["diabetes"]
